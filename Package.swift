@@ -21,11 +21,20 @@ let package = Package(
         .target(
             name: "GCDWebServers",
             dependencies: [],
-            path: "GCDWebServer",
-            cxxSettings:[
-                .headerSearchPath("Core"),
-                .headerSearchPath("Requests"),
-                .headerSearchPath("Responses"),
+            path: ".",
+            exclude: [
+                "Frameworks",
+                "GCDWebUploader",
+                "iOS",
+                "Mac",
+                "Tests",
+                "tvOS",
+                "Package.swift"
+            ],
+            cSettings:[
+                .headerSearchPath("GCDWebServer/Core"),
+                .headerSearchPath("GCDWebServer/Requests"),
+                .headerSearchPath("GCDWebServer/Responses"),
             ]),
     ]
 )
