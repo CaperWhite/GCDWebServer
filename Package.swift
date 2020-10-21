@@ -1,4 +1,4 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -24,12 +24,14 @@ let package = Package(
             path: ".",
             exclude: [
                 "Frameworks",
-                "GCDWebUploader",
                 "iOS",
                 "Mac",
                 "Tests",
                 "tvOS",
                 "Package.swift"
+            ],
+            resources: [
+                .copy("GCDWebUploader/GCDWebUploader.bundle"),
             ],
             cSettings:[
                 .headerSearchPath("GCDWebServer/Core"),
